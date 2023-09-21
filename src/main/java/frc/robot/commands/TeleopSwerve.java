@@ -46,7 +46,7 @@ public class TeleopSwerve extends CommandBase {
         this.rotationSup = rotationSup;
         this.robotCentricSup = robotCentricSup;
         this.slowSpeed = slowSpeed;
-        robotCent = true;
+        robotCent = false;
         
 
     }

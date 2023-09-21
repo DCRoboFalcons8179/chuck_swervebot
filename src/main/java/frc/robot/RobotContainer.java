@@ -59,7 +59,11 @@ import frc.robot.commands.BalanceBasic.*;
 public class RobotContainer {
     /* Controllers */
     private final Joystick driver = new Joystick(0);
+
+    // Switches
     public  final Joystick panel = new Joystick(2);
+
+    // Buttons
     private final Joystick board = new Joystick(3);
     
     
@@ -201,7 +205,7 @@ public class RobotContainer {
         // Gripper buttons
     private final JoystickButton openClawBoard = new JoystickButton(board, 9);
     private final JoystickButton squeezeClawBoard = new JoystickButton(board, 7);
-    private final JoystickButton cubeCarry = new JoystickButton(panel, 4);
+    // private final JoystickButton cubeCarry = new JoystickButton(panel, 4);
     private final JoystickButton cubeSqueeze = new JoystickButton(panel, 6);
     
     /* Subsystems */
@@ -417,9 +421,9 @@ public class RobotContainer {
 
         backwardElbow.onTrue(new updateHoldPosition(() -> arm.getHoldShoulder(), () -> (arm.getHoldElbow() + 2), arm));
 
-        cubeCarry.onTrue((new updateHoldPosition(() ->  arm.getHoldShoulder(), () -> 45, arm).repeatedly())
-        .until(() -> arm.elbowCurrentAngle() < 60)
-        .andThen(new updateHoldPosition(() -> 25, () -> 38, arm)));
+        // cubeCarry.onTrue((new updateHoldPosition(() ->  arm.getHoldShoulder(), () -> 45, arm).repeatedly())
+        // .until(() -> arm.elbowCurrentAngle() < 60)
+        // .andThen(new updateHoldPosition(() -> 25, () -> 38, arm)));
 
         cubeSqueeze.onTrue((new updateHoldPosition(() ->  arm.getHoldShoulder(), () -> 45, arm).repeatedly())
         .until(() -> arm.elbowCurrentAngle() < 60)
